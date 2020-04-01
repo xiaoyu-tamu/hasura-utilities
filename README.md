@@ -11,6 +11,18 @@ module.exports = {
 };
 ```
 
+Create a `.env` in the project root with your credientials
+
+```
+DATABASE_URI=
+HASURA_ADMIN_SECRET=
+API=
+
+DATABASE_URI_EXAMPLE=postgres://USERNAME:PASSWORD@HOST:PORT/DATABASE_NAME?ssl=true
+HASURA_ADMIN_SECRET_EXAMPLE=verysecret
+API_EXAMPLE=http://domainname.herokuapp.com
+```
+
 1. `yarn` or `npm install`
 2. `yarn dev` or `npm run dev`
 
