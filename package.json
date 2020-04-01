@@ -1,0 +1,56 @@
+{
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rm -rf dist tsconfig.tsbuildinfo",
+    "build": "tsc -b",
+    "dev": "ts-node -r dotenv/config src"
+  },
+  "author": {
+    "email": "xiaoyu.tamu@gmail.com",
+    "name": "Michael Li",
+    "url": "https://michael.land"
+  },
+  "dependencies": {
+    "@ts-schema-generator/explorer": "0.1.6",
+    "@ts-schema-generator/types": "0.1.1",
+    "@ts-schema-generator/utils": "0.1.1",
+    "@types/change-case": "^2.3.1",
+    "@types/node-fetch": "^2.5.5",
+    "@types/pluralize": "^0.0.29",
+    "@types/slonik": "^22.1.2",
+    "change-case": "^4.1.1",
+    "node-fetch": "^2.6.0",
+    "pluralize": "^8.0.0",
+    "slonik": "^22.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.8",
+    "@types/prettier": "^1.19.1",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.3",
+    "lint-staged": ">=10",
+    "prettier": "^2.0.2",
+    "type-fest": "^0.12.0",
+    "typescript": "^3.8.3",
+    "ts-node": "8.8.1"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx,gql,graphql}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
